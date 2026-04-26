@@ -10,7 +10,8 @@ def main():
     red = input("red=? ")
     green = input("green=? ")
     blue = input("blue=? ")
-    name = input("Output filename base (e.g., range): ")
+    name = input("Output filename base (e.g., swiroutput): ")
+    inputfilepath = input("Full Path to the MTD_MSIL1C.xml file of the Project: ")
 
     if not red or not green or not blue or not name:
         print("Error: All inputs are required.")
@@ -21,7 +22,8 @@ def main():
     optimized_output = f"{name}_optimized.tif"
 
     # Hardcoded input file as requested
-    input_xml = "/home/fine/Downloads/S2C_MSIL1C_20260416T053641_N0512_R005_T43QBB_20260416T091808.SAFE/MTD_MSIL1C.xml"
+    #input_xml = "/home/fine/Downloads/S2C_MSIL1C_20260416T053641_N0512_R005_T43QBB_20260416T091808.SAFE/MTD_MSIL1C.xml"
+    input_xml = f"{inputfilepath}"
 
     # Expand the home directory path for GPT to avoid alias issues in Python
     gpt_path = os.path.expanduser("~/esa-snap/bin/gpt")
